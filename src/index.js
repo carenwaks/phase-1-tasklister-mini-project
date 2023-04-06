@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let paragraph= document.createElement("p")  //create a new paragraph
   paragraph.textContent = taskDescriptionInput.value  //paragraph content to reflect content in the task description input box
   taskList.appendChild(paragraph)  //connect the new button to the task list
+  
   //adding a delete button to remove task and button
   const deleteButton = document.createElement("button")
   deleteButton.textContent = "Delete Task"
@@ -19,11 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// let createTaskButtton = document.querySelector('tasks')
-// 
-// taskDescriptionInput.addEventListener('click', function createTask () {
-//   
 
-//   paragraph.textContent = taskDescriptionInput.value;
-//   taskList.appendChild(paragraph)
-// })
