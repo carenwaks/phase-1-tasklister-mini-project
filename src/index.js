@@ -1,22 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   // your code here
-  const form =document.querySelector("form") //select the form
-  let taskList = document.getElementById("tasks")  //select the task Id
-  let taskDescriptionInput = document.getElementById("new-task-description")  //select the input area
-  let paragraph= document.createElement("p")  //create a new paragraph
-  paragraph.textContent = taskDescriptionInput.value  //paragraph content to reflect content in the task description input box
-  taskList.appendChild(paragraph)  //connect the new button to the task list
+// Selecting the necessary fields
+  const form =document.querySelector("form") 
+  let taskList = document.getElementById("tasks")  
+    
   
-  //adding a delete button to remove task and button
-  const deleteButton = document.createElement("button")
-  deleteButton.textContent = "Delete Task"
-  paragraph.appendChild(deleteButton)
-  deleteButton.addEventListener("click", function (event) {
-    paragraph.remove();
-  })
+  // Adding a delete button to remove task and button
+ 
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
+    let taskDescriptionInput = document.getElementById("new-task-description")
+    let paragraph= document.createElement("p")  
+    paragraph.textContent = taskDescriptionInput.value  
+    taskList.appendChild(paragraph)
+
+    const deleteButton = document.createElement("button")
+    deleteButton.textContent = "Delete Task"
+    paragraph.appendChild(deleteButton)
+    deleteButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      paragraph.remove();
+    })
+    form.reset();
+
   })
 })
 
